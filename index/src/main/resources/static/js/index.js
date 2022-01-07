@@ -1,25 +1,26 @@
 $( document ).ready(function() {
 	addNavigationButtons();
-	showCharMenu();
 	addDefectMenu();
+	showCharMenu();
 })
 
 function addNavigationButtons(){
 	var body = $('body');
-	body.append('<div id="navigationContent"></div>');
+	body.append('<div id="navigationContent" class="nav-bar"></div>');
     body.append('<div id="content"></div>')
 
 	var navigationContent = $('#navigationContent');
-    navigationContent.append('<button id="showChartButton">Show Variance</button>')
-    navigationContent.append('<button id="addDefectButton">Add Defect</button>');
+	navigationContent.append('<ul id="navigationList" class="nav-bar"></ul>')
+	var navigationList = $('#navigationList')
+	navigationList.append('<li id="addDefectButton" class="nav-bar"><a class="nav-bar" href="#addDefectButton">Add Defect</a></li>')
+	navigationList.append('<li id="showChartButton" class="nav-bar"><a class="nav-bar" href="#showChartButton">Show Variance</a></li>')
 }
 
 function addDefectMenu(){
 	var content = $("#content");
-	var addDefectButton = $("#addDefectButton")
+	var addDefectButton = document.getElementById("addDefectButton");
 
-	addDefectButton.click(
-        function(){
+	addDefectButton.addEventListener("click",function(e) {
             var addDefectContent = content.find("#addDefectContent");
             if(addDefectContent.length == 0 ){
                 content.empty();
@@ -32,10 +33,9 @@ function addDefectMenu(){
 
 function showCharMenu(){
 	var content = $("#content");
-	var showChartButton = $("#showChartButton")
+	var showChartButton = document.getElementById("showChartButton");
 
-	showChartButton.click(
-        function(){
+	showChartButton.addEventListener("click",function(e) {
             var showChartContent = content.find("#showChartContent");
             if(showChartContent.length == 0 ){
                 content.empty();

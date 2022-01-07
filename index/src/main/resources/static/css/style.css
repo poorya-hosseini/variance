@@ -1,50 +1,37 @@
 body {
 	margin: 0px;
-}
-
-table.timecard {
-	border-collapse: collapse;
-	border: 1px solid #fff; /*for older IE*/
-	border-style: hidden;
-}
-
-table.timecard thead th {
-	background-color: #6bceff7f;
-	border-bottom: 2px solid #000000;
-	font-size: large;
-}
-
-table.timecard th, table.timecard td{
-    padding-right: 10px;
-	padding-left: 10px;
-	border-bottom: 1px solid #21c0ff;
-    text-align: left;
-}
-
-table.timecard tbody th {
-	font-weight: normal;
-}
-
-
-table.timecard tr.underestimate {
-	background-color: #ff75757f;
-}
-
-table.timecard tr.overestimate {
-	background-color: #cdffc7cc;
-}
-
-.box {
-  float: left;
-  width: 50%;
-}
-
-#navigationContent{
-	background-color: coral;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	background-color: #F6F2D4;
 }
 
 #content {
-    background-color: cadetblue;
+	margin: 1em;
+}
+
+ul.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #5584AC;
+}
+
+li.nav-bar {
+  float: left;
+  border-right:0.1em solid #95D1CC;
+}
+
+li.nav-bar a.nav-bar {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 1em 1em;
+  text-decoration: none;
+}
+
+li.nav-bar a.nav-bar:hover:not(.active) {
+  background-color: #22577E;
+}
+
+.active {
+  background-color: #04AAD0;
 }
