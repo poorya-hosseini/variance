@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="/js/defectApi.js"></script>
+	<script type="text/javascript" src="/js/addDefect.js"></script>
+</head>
+<body>
+<form id="addDefectForm" method="post">
+	<table>
+		<tr>
+			<td><label for="x">X:</label></td>
+			<td><input type="text" id="x" name="x"></td>
+		</tr>
+		<tr>
+			<td><label for="y">Y:</label></td>
+			<td><input type="text" id="y" name="y"></td>
+		</tr>
+		<tr>
+			<td><label for="z">Z:</label></td>
+			<td><input type="text" id="z" name="z"></td>
+		</tr>
+		<tr>
+			<td><label for="value">Value:</label></td>
+			<td><input type="text" id="value" name="value"></td>
+		</tr>
+		<tr>
+			<td>
+				<button id="hideAddDefectForm">Hide</button>
+			</td>
+			<td><input type="submit" value="Submit"/></td>
+		</tr>
+	</table>
+</form>
+<p id="addDefectResult"></p>
+
+</body>
+</html>

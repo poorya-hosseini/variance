@@ -1,0 +1,50 @@
+body {
+	margin: 0px;
+}
+
+table.timecard {
+	border-collapse: collapse;
+	border: 1px solid #fff; /*for older IE*/
+	border-style: hidden;
+}
+
+table.timecard thead th {
+	background-color: #6bceff7f;
+	border-bottom: 2px solid #000000;
+	font-size: large;
+}
+
+table.timecard th, table.timecard td{
+    padding-right: 10px;
+	padding-left: 10px;
+	border-bottom: 1px solid #21c0ff;
+    text-align: left;
+}
+
+table.timecard tbody th {
+	font-weight: normal;
+}
+
+
+table.timecard tr.underestimate {
+	background-color: #ff75757f;
+}
+
+table.timecard tr.overestimate {
+	background-color: #cdffc7cc;
+}
+
+.box {
+  float: left;
+  width: 50%;
+}
+
+#navigationContent{
+	background-color: coral;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#content {
+    background-color: cadetblue;
+}
