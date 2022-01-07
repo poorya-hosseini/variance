@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Title</title>
+	<link rel="stylesheet" type="text/css" media="all" href="../static/css/addDefectStyle.css" th:href="@{/css/addDefectStyle.css}"/>
 	<script type="text/javascript" src="/js/defectApi.js"></script>
 	<script type="text/javascript" src="/js/addDefect.js"></script>
 </head>
@@ -26,14 +27,24 @@
 			<td><input type="text" id="value" name="value"></td>
 		</tr>
 		<tr>
-			<td>
-				<button id="hideAddDefectForm">Hide</button>
-			</td>
-			<td><input type="submit" value="Submit"/></td>
+			<td rowspan="2"><input type="submit" value="Submit"/></td>
 		</tr>
 	</table>
 </form>
 <p id="addDefectResult"></p>
 
+<table id="defectsList">
+	<tr>
+		<td colspan="4">
+			<button id="refreshDefects">Refresh</button>
+		</td>
+	</tr>
+	<tr>
+		<th>X</th>
+		<th>Y</th>
+		<th>Z</th>
+		<th>Value</th>
+	</tr>
+</table>
 </body>
 </html>

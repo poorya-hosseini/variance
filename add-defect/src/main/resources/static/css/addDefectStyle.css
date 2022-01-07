@@ -1,0 +1,42 @@
+#addDefectContent {
+  display: flex;
+}
+
+#addDefectForm{
+	flex-grow: 2;
+}
+
+#defectsList {
+    flex-grow: 10;
+    align-self: start;
+    border-collapse: collapse;
+    font-size: 1em;
+    box-shadow: 0 0 0.5em #95D1CC;
+}
+
+#defectsList thead tr {
+    text-align: left;
+}
+
+#defectsList th {
+    padding: 0.25em 0.1em;
+    text-align: left;
+}
+
+#defectsList td {
+    padding: 0.1em 0.1em;
+    text-align: left;
+}
+
+#defectsList tbody tr {
+    border-bottom: 0.05em solid #5584AC;
+}
+
+#defectsList tbody tr:nth-of-type(even) {
+    background-color: #95D1CC;
+}
+
+#defectsList tbody tr:last-of-type,
+#defectsList tbody tr:first-of-type{
+    border-bottom: 0.125em solid #5584AC;
+}

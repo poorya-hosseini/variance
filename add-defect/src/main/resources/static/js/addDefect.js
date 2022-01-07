@@ -1,18 +1,42 @@
 $(document).ready(function() {
-	$("#addDefectForm").submit(function(event) {
+	setSubmit();
+	setRefreshDefectButton();
+	getAllDefects("",  refreshDefectList);
+});
+
+function setSubmit(){
+	var addDefectForm = $("#addDefectForm");
+	addDefectForm.submit(function(event) {
 	    event.preventDefault(); // avoid to execute the actual submit of the form.
 	    var form = $(this);
-	    var result = addDefect(form.serialize(), showAddDefectResponse);
+	    addDefect(form.serialize(), addDefectRow);
 	});
-});
+}
 
-$(document).ready(function() {
-	$("#hideAddDefectForm").click(
-		function(){
-			$("#content").empty();
-		});
-});
+function setRefreshDefectButton(){
+	var refreshDefectsButton = $("#refreshDefects");
+	refreshDefectsButton.click(function() {
+		getAllDefects("",  refreshDefectList);
+    });
+}
 
-function showAddDefectResponse(result){
-	document.getElementById("addDefectResult").textContent = "added new defect (" + result.x + "," + result.y + "," + result.z + ")-> " + result.value;
+function refreshDefectList(defectItems){
+	removeDefects();
+	defectItems.forEach(defectItem => addDefectRow(defectItem));
+}
+
+function addDefectRow(defectItem){
+	var defectsList = $("#defectsList");
+	defectsList.append('<tr id="defect-row-' + defectItem.id + '"></tr>');
+
+	var defectRow = $("#defect-row-" + defectItem.id);
+	defectRow.append('<td>'+ defectItem.x +'</td>');
+	defectRow.append('<td>'+ defectItem.y +'</td>');
+	defectRow.append('<td>'+ defectItem.z +'</td>');
+	defectRow.append('<td>'+ defectItem.value +'</td>');
+}
+
+function removeDefects(){
+	var defectRows = $("[id^=defect-row-]");
+	defectRows.remove();
 }
