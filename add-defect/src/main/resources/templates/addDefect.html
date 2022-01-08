@@ -9,7 +9,7 @@
 </head>
 <body>
 <form id="addDefectForm" method="post">
-	<table>
+	<table id="addDefectFormTable">
 		<tr>
 			<td><label for="x">X:</label></td>
 			<td><input type="text" id="x" name="x"></td>
@@ -35,15 +35,12 @@
 
 <table id="defectsList">
 	<tr>
-		<td colspan="4">
-			<button id="refreshDefects">Refresh</button>
-		</td>
-	</tr>
-	<tr>
+		<th>ID</th>
 		<th>X</th>
 		<th>Y</th>
 		<th>Z</th>
 		<th>Value</th>
+		<th>Remove</th>
 	</tr>
 </table>
 </body>

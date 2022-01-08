@@ -2,38 +2,47 @@
   display: flex;
 }
 
+#addDefectFormTable{
+	border-spacing: 0em;
+}
+
 #addDefectForm{
-	flex-grow: 2;
+    padding-right:1em;
 }
 
 #defectsList {
-    flex-grow: 10;
+    width: 30em;
     align-self: start;
     border-collapse: collapse;
     font-size: 1em;
-    box-shadow: 0 0 0.5em #95D1CC;
+    box-shadow: 0 0 0.5em #5584AC;
 }
 
-#defectsList thead tr {
-    text-align: left;
-}
 
 #defectsList th {
     padding: 0.25em 0.1em;
-    text-align: left;
+    text-align: center;
+    color: #dfffff;
+    background-color: #5584AC;
 }
 
 #defectsList td {
-    padding: 0.1em 0.1em;
-    text-align: left;
+    text-align: center;
 }
 
 #defectsList tbody tr {
     border-bottom: 0.05em solid #5584AC;
 }
 
-#defectsList tbody tr:nth-of-type(even) {
+#defectsList tbody tr:nth-of-type(odd) {
     background-color: #95D1CC;
+}
+
+#defectsList tbody td:first-of-type,
+#defectsList tbody th:first-of-type {
+    border-right: 0.125em solid #5584AC;
+    width: 3em;
+    text-align:center;
 }
 
 #defectsList tbody tr:last-of-type,

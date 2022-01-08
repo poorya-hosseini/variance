@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.practice.pooria.variance.add.defect.api.dto.DefectDto;
@@ -26,7 +26,7 @@ public class DefectApi {
 	private DefectTransformer defectTransformer;
 
 	@GetMapping("/defects")
-	public List<DefectDto> all() {
+	public List<DefectDto> getAll() {
 		return defectRepository
 			.findAll()
 			.stream()
@@ -35,12 +35,13 @@ public class DefectApi {
 	}
 
 	@PostMapping(value = "/defects", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public @ResponseBody Defect newDefect(DefectDto defect) {
+	public @ResponseBody
+	Defect add(DefectDto defect) {
 		return defectRepository.save(defectTransformer.transform(defect));
 	}
 
-	@DeleteMapping("/defects")
-	public void deletedDefect(@RequestBody DefectDto defect) {
-		defectRepository.delete(defectTransformer.transform(defect));
+	@DeleteMapping("/defects/{id}")
+	public void delete(@PathVariable Long id) {
+		defectRepository.deleteById(id);
 	}
 }

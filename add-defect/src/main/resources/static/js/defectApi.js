@@ -1,4 +1,5 @@
 function addDefect(defect, callBack){
+	debugger;
      $.ajax({
         async: true,
         type: "POST",
@@ -28,12 +29,11 @@ function getAllDefects(defect, callBack){
     });
 }
 
-function deleteDefect(defect, callBack){
+function deleteDefect(defectId, callBack){
      $.ajax({
         async: true,
         type: "DELETE",
-        url: "/defects",
-        data: defect,
+        url: "/defects/" + defectId,
         success: function(response) {
             callBack(response);
         },
