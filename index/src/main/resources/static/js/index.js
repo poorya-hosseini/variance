@@ -27,6 +27,8 @@ function addDefectMenu(){
                 content.append('<div id="addDefectContent"></div>')
                 addDefectContent = content.find("#addDefectContent");
                 addDefectContent.load("addDefect");
+                removeActiveMenu();
+				addDefectButton.classList.add("active");
             }
         })
 }
@@ -42,7 +44,16 @@ function showCharMenu(){
                 content.append('<div id="showChartContent"></div>')
                 showChartContent = content.find("#showChartContent")[0];
                 showChartContent.innerHTML= "show variance chart";
+                removeActiveMenu();
+                showChartButton.classList.add("active");
             }
         })
+}
+
+function removeActiveMenu(){
+	var activeMenuItem = $("#navigationList").find(".active");
+	if(activeMenuItem.length > 0){
+		activeMenuItem.removeClass("active");
+	}
 }
 

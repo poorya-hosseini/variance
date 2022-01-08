@@ -1,5 +1,4 @@
 function addDefect(defect, callBack){
-	debugger;
      $.ajax({
         async: true,
         type: "POST",

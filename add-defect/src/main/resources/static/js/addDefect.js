@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	debugger;
 	setSubmit();
 	setRefreshDefectButton();
 	getAllDefects("",  refreshDefectList);
